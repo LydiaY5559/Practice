@@ -34,15 +34,18 @@ def plot_decision_boundary(X, y, pred_func, h=0.02):
     plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.Spectral)
 
 # 绘制分类器在不同参数下的预测分布图
-def plot_classifier_paras(model, X, y, paras_dict, plot_input=True, col_num=4):
+def plot_classifier_paras(model, X, y, paras_dict=None, plot_input=True, col_num=4):
     # plot设置
     figsize_col = 15
     figsize_row = figsize_col / col_num * 0.85
     
     # 转换paras格式 {'a': [1,2], 'b': [10,20]} -> [{'a':1, 'b':10}, ...] 即生成笛卡尔积
-    paras_keys = list(paras_dict.keys())
-    paras_values = itertools.product(*paras_dict.values())
-    paras_list = [dict(zip(paras_keys, values)) for values in paras_values]
+    if paras_dict is None:
+        paras_list = [{}]
+    else:
+        paras_keys = list(paras_dict.keys())
+        paras_values = itertools.product(*paras_dict.values())
+        paras_list = [dict(zip(paras_keys, values)) for values in paras_values]
     
     if plot_input: paras_list = np.append([None], paras_list)
     plot_row_num = (len(paras_list) - 1) // col_num + 1
