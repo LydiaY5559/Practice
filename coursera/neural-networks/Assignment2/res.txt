@@ -30,8 +30,3 @@ momentum, epochs=10
 0.5 : 2.942, 2.933, 2.931
 0.9 : 2.535, 2.604, 2.613
 
-
-
-Final Training CE 4.432
-Final Validation CE 4.386
-Final Test CE 4.393
