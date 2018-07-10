@@ -1,7 +1,10 @@
+# python temp file
 __pycache__
-
 *.pyc
+.ipynb_checkpoints
 
+# mac trash file
 .DS_Store
 
-.ipynb_checkpoints
+# temp file
+python/python/tmp/*
