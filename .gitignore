@@ -3,6 +3,9 @@ __pycache__
 *.pyc
 .ipynb_checkpoints
 
+# spark temp file
+spark-warehouse
+
 # mac trash file
 .DS_Store
 
